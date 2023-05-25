@@ -26,7 +26,8 @@ const Home: NextPage = () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      messages: (await import(`~/dictionaries/${context.locale}/index.json`)).default
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+      messages: (await import(`~/dictionaries/${context.locale as string}/index.json`)).default
     }
   };
 }
