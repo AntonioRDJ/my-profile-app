@@ -1,7 +1,7 @@
-import { GetStaticProps, type NextPage } from "next";
+import { type GetStaticProps, type NextPage } from "next";
 import { useRouter } from "next/router";
-import LocaleSwitcher from "~/components/localeSwitcher";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -14,9 +14,11 @@ const Home: NextPage = () => {
       <p>Current locale: {locale}</p>
       <p>Default locale: {defaultLocale}</p>
       <p>Configured locales: {JSON.stringify(locales)}</p>
-      <LocaleSwitcher />
       <h5>teste do intl:</h5>
       <h6>{t("ola")}</h6>
+      <Link href="/xuxa">
+        Go to Xuxa
+      </Link>
     </>
   );
 };
